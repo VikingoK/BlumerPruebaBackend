@@ -1,0 +1,44 @@
+
+---------------- Mutaciones ----------------
+
+mutation{
+    crearPost(description:"hola", videoUrl:"http://", createdAt:"creado hoy")
+}
+
+
+mutation{
+  crearComment(postId: 2 createdAt:"creado hoy", description:"chevere siii")
+}
+
+
+
+---------------- Querys ----------------
+
+query{
+  obtenerPosts{
+    createdAt
+    description
+  }
+}
+
+query{
+  obtenerPostById(id: 1){
+    description
+    videoUrl
+  }
+}
+
+query{
+  obtenerCommentById(id: 3){
+    description
+    createdAt
+  }
+}
+
+query{
+	obtenerCommentsByPostsId(id: 2){
+  	description,
+    id,
+    postId
+	}
+}
